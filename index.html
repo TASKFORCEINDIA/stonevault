@@ -1,135 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>StoneVault – Granite Catalogue</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoneVault – Luxury Granite Catalogue</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #0b1220;
-      color: #f1f5f9;
+      background: #0b0b0b;
+      color: #f5f5f5;
     }
+
     header {
-      background: #020617;
-      padding: 30px 20px;
+      background: #000;
+      padding: 16px;
       text-align: center;
-      border-bottom: 1px solid #1e293b;
+      border-bottom: 1px solid #333;
     }
+
     header h1 {
       margin: 0;
-      font-size: 34px;
+      font-size: 22px;
       letter-spacing: 1px;
     }
+
     header p {
-      color: #94a3b8;
-      margin-top: 8px;
-      font-size: 14px;
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: #aaa;
     }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
-    }
-    h2 {
-      color: #38bdf8;
-      border-bottom: 1px solid #1e293b;
-      padding-bottom: 8px;
-    }
-    .card {
-      background: #020617;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
+
+    .section {
       padding: 20px;
-      margin-top: 15px;
     }
-    .card h3 {
-      margin-top: 0;
-      color: #e5e7eb;
+
+    .section h2 {
+      font-size: 18px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
     }
-    .tag {
-      display: inline-block;
-      background: #1e293b;
-      color: #93c5fd;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      margin-right: 6px;
-      margin-top: 6px;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
     }
-    .locked {
+
+    .card {
+      background: #111;
+      border: 1px solid #222;
+      padding: 14px;
+      border-radius: 8px;
       text-align: center;
-      padding: 40px 20px;
-      background: #020617;
-      border: 1px dashed #334155;
-      border-radius: 12px;
-      color: #94a3b8;
     }
+
+    .card h3 {
+      margin: 0;
+      font-size: 14px;
+      color: #e0e0e0;
+    }
+
+    .locked {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 12px;
-      color: #64748b;
-      border-top: 1px solid #1e293b;
+      font-size: 11px;
+      color: #777;
+      padding: 14px;
+      border-top: 1px solid #333;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>StoneVault</h1>
-  <p>Luxury Granite Catalogue · India & International</p>
-</header>
+  <header>
+    <h1>STONEVAULT</h1>
+    <p>Luxury Granite Catalogue</p>
+  </header>
 
-<section>
-  <h2>🇮🇳 India Granite Catalogue (A–Z)</h2>
+  <div class="section">
+    <h2>India Catalogue (A–Z)</h2>
 
-  <div class="card">
-    <h3>Absolute Black</h3>
-    <span class="tag">Andhra Pradesh</span>
-    <span class="tag">Black</span>
-    <span class="tag">Export Quality</span>
-    <p>Premium deep black granite widely used for monuments, flooring, and countertops.</p>
+    <div class="grid">
+      <div class="card"><h3>Andhra Pradesh</h3></div>
+      <div class="card"><h3>Telangana</h3></div>
+      <div class="card"><h3>Tamil Nadu</h3></div>
+      <div class="card locked"><h3>Karnataka</h3></div>
+      <div class="card locked"><h3>Rajasthan</h3></div>
+      <div class="card locked"><h3>Odisha</h3></div>
+      <div class="card locked"><h3>Madhya Pradesh</h3></div>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Kashmir White</h3>
-    <span class="tag">Tamil Nadu</span>
-    <span class="tag">White</span>
-    <span class="tag">Popular Export</span>
-    <p>Light grey-white granite with burgundy and grey mineral patterns.</p>
+  <div class="section">
+    <h2>International Catalogue (A–Z)</h2>
+
+    <div class="grid">
+      <div class="card locked"><h3>Brazil</h3></div>
+      <div class="card locked"><h3>Norway</h3></div>
+      <div class="card locked"><h3>Angola</h3></div>
+      <div class="card locked"><h3>South Africa</h3></div>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Tan Brown</h3>
-    <span class="tag">Telangana</span>
-    <span class="tag">Brown</span>
-    <span class="tag">High Demand</span>
-    <p>Rich brown granite with black and red crystals, ideal for luxury interiors.</p>
-  </div>
-
-  <p style="margin-top:20px;color:#94a3b8;">
-    🔹 More Indian varieties will be added state-wise in alphabetical order.
-  </p>
-</section>
-
-<section>
-  <h2>🌍 International Granite Catalogue</h2>
-
-  <div class="locked">
-    🔒 <strong>Locked Section</strong><br><br>
-    Brazil · Norway · Angola · Italy · Africa · South America<br><br>
-    This section is intentionally locked.<br>
-    Access will be enabled in the premium / app version.
-  </div>
-</section>
-
-<footer>
-  © 2025 StoneVault · Luxuriano Stones · All Rights Reserved
-</footer>
+  <footer>
+    © 2025 StoneVault · Luxuriano Stones
+  </footer>
 
 </body>
 </html>
