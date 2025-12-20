@@ -16,13 +16,13 @@ body {
 /* HEADER */
 header {
   text-align: center;
-  padding: 26px 12px;
+  padding: 24px 10px;
   border-bottom: 1px solid #222;
 }
 
 header h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 26px;
 }
 
 header p {
@@ -34,7 +34,7 @@ header p {
 /* CONTAINER */
 .container {
   max-width: 720px;
-  margin: 30px auto;
+  margin: 24px auto;
   padding: 0 12px;
 }
 
@@ -42,7 +42,7 @@ header p {
 .card {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   background: #151515;
   border-radius: 14px;
   padding: 14px;
@@ -56,7 +56,7 @@ header p {
 
 .card-content h2 {
   margin: 0;
-  font-size: 19px;
+  font-size: 18px;
   color: #fff;
 }
 
@@ -69,16 +69,15 @@ header p {
 
 /* SMALL IMAGE */
 .card-img {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   border-radius: 6px;
   border: 2px solid #555;
   object-fit: cover;
-  cursor: pointer;
 }
 
 /* POPUP */
-.popup {
+#popup {
   display: none;
   position: fixed;
   inset: 0;
@@ -88,7 +87,7 @@ header p {
   z-index: 999;
 }
 
-.popup img {
+#popup img {
   max-width: 92%;
   max-height: 92%;
   border-radius: 10px;
@@ -98,7 +97,7 @@ header p {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 22px 10px;
+  padding: 20px 10px;
   font-size: 13px;
   color: #777;
   border-top: 1px solid #222;
@@ -121,7 +120,7 @@ footer {
       <h2>Absolute Black</h2>
       <p>Deep black premium granite. Popular for flooring & countertops.</p>
     </div>
-    <img src="absolute-black.jpg" class="card-img" onclick="openImage(this.src)">
+    <img src="absolute-black.jpg" class="card-img" onclick="openPopup('absolute-black.jpg')">
   </div>
 
 </div>
@@ -130,18 +129,18 @@ footer {
   © StoneVault | Luxuriano Stones
 </footer>
 
-<!-- IMAGE POPUP -->
-<div class="popup" id="popup" onclick="closeImage()">
+<!-- POPUP -->
+<div id="popup" onclick="closePopup()">
   <img id="popupImg">
 </div>
 
 <script>
-function openImage(src) {
-  document.getElementById("popupImg").src = src;
+function openPopup(imgSrc) {
+  document.getElementById("popupImg").src = imgSrc;
   document.getElementById("popup").style.display = "flex";
 }
 
-function closeImage() {
+function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
 </script>
