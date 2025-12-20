@@ -3,76 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StoneVault | Premium Granite Catalogue</title>
+<title>StoneVault | Premium Catalogue</title>
 
 <style>
+:root {
+  --bg: #0b0b0b;
+  --card: #151515;
+  --border: #222;
+  --text-main: #ffffff;
+  --text-sub: #bdbdbd;
+  --accent: #666;
+}
+
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: #eee;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
 }
 
 /* HEADER */
 header {
-  text-align: center;
-  padding: 24px 10px;
-  border-bottom: 1px solid #222;
+  padding: 22px 14px;
+  border-bottom: 1px solid var(--border);
 }
 
 header h1 {
   margin: 0;
-  font-size: 26px;
+  font-size: 24px;
 }
 
 header p {
   margin-top: 6px;
-  font-size: 14px;
-  color: #aaa;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+/* SEARCH */
+.search-box {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #111;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: white;
+  font-size: 15px;
+  outline: none;
 }
 
 /* CONTAINER */
 .container {
-  max-width: 720px;
-  margin: 24px auto;
-  padding: 0 12px;
+  max-width: 760px;
+  margin: 18px auto;
+  padding: 0 14px;
 }
 
 /* CARD */
 .card {
   display: flex;
   align-items: center;
-  gap: 12px;
-  background: #151515;
-  border-radius: 14px;
-  padding: 14px;
-  margin-bottom: 16px;
-  border: 1px solid #222;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 18px;
 }
 
-.card-content {
-  flex: 1;
-}
+/* TEXT */
+.card-content { flex: 1; }
 
 .card-content h2 {
   margin: 0;
-  font-size: 18px;
-  color: #fff;
+  font-size: 17px;
 }
 
 .card-content p {
   margin-top: 6px;
-  font-size: 13px;
-  color: #bbb;
-  line-height: 1.4;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--text-sub);
 }
 
-/* SMALL IMAGE */
+/* THUMB IMAGE */
 .card-img {
-  width: 46px;
-  height: 46px;
-  border-radius: 6px;
-  border: 2px solid #555;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 2px solid var(--accent);
   object-fit: cover;
 }
 
@@ -81,17 +106,22 @@ header p {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.92);
   justify-content: center;
   align-items: center;
   z-index: 999;
 }
 
-#popup img {
+#popupImg {
   max-width: 92%;
   max-height: 92%;
-  border-radius: 10px;
+  border-radius: 14px;
   border: 3px solid #777;
+  transition: transform 0.35s ease;
+}
+
+#popupImg.zoomed {
+  transform: scale(1.45);
 }
 
 /* FOOTER */
@@ -100,7 +130,7 @@ footer {
   padding: 20px 10px;
   font-size: 13px;
   color: #777;
-  border-top: 1px solid #222;
+  border-top: 1px solid var(--border);
 }
 </style>
 </head>
@@ -112,15 +142,27 @@ footer {
   <p>Premium Granite Catalogue</p>
 </header>
 
-<div class="container">
+<div class="search-box">
+  <input type="text" id="search" placeholder="Search granite, colour, finish...">
+</div>
 
-  <!-- GRANITE CARD -->
+<div class="container" id="list">
+
+  <!-- CARD -->
   <div class="card">
     <div class="card-content">
       <h2>Absolute Black</h2>
-      <p>Deep black premium granite. Popular for flooring & countertops.</p>
+      <p>Deep black premium granite for flooring and countertops.</p>
     </div>
     <img src="absolute-black.jpg" class="card-img" onclick="openPopup('absolute-black.jpg')">
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <h2>Black Galaxy</h2>
+      <p>Black granite with golden speckles, luxury finish.</p>
+    </div>
+    <img src="black-galaxy.jpg" class="card-img" onclick="openPopup('black-galaxy.jpg')">
   </div>
 
 </div>
@@ -135,14 +177,32 @@ footer {
 </div>
 
 <script>
-function openPopup(imgSrc) {
-  document.getElementById("popupImg").src = imgSrc;
-  document.getElementById("popup").style.display = "flex";
+/* IMAGE POPUP */
+function openPopup(src) {
+  const popup = document.getElementById("popup");
+  const img = document.getElementById("popupImg");
+  img.src = src;
+  img.classList.remove("zoomed");
+  popup.style.display = "flex";
 }
+
+document.getElementById("popupImg").addEventListener("click", function(e) {
+  e.stopPropagation();
+  this.classList.toggle("zoomed");
+});
 
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
+
+/* SEARCH */
+document.getElementById("search").addEventListener("keyup", function() {
+  const value = this.value.toLowerCase();
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(value)
+      ? "flex" : "none";
+  });
+});
 </script>
 
 </body>
