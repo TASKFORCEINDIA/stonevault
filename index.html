@@ -1,88 +1,88 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>StoneVault | Granite Catalogue</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StoneVault | Premium Granite Catalogue</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:#0d0d0d;
-      color:#ffffff;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #eee;
+}
 
-    header{
-      background:#111;
-      padding:20px;
-      text-align:center;
-      border-bottom:1px solid #333;
-    }
+header {
+  text-align: center;
+  padding: 28px 12px;
+  border-bottom: 1px solid #222;
+}
 
-    header h1{
-      margin:0;
-      font-size:26px;
-      letter-spacing:1px;
-    }
+header h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
 
-    header p{
-      margin:6px 0 0;
-      font-size:14px;
-      color:#aaa;
-    }
+header p {
+  margin: 6px 0 0;
+  color: #aaa;
+  font-size: 14px;
+}
 
-    .container{
-      padding:20px;
-    }
+.container {
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 0 12px;
+}
 
-    /* Granite Card */
-    .card{
-      display:flex;
-      flex-direction:row;   /* force side by side */
-      flex-wrap:nowrap;     /* never stack */
-      align-items:center;
-      gap:15px;
-      background:#1b1b1b;
-      border:2px solid #2a2a2a;
-      border-radius:14px;
-      padding:16px;
-      margin-bottom:16px;
-    }
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #151515;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 18px;
+  border: 1px solid #222;
+}
 
-    .card img{
-      width:90px;
-      height:90px;
-      min-width:90px;       /* prevents shrinking */
-      object-fit:cover;
-      border-radius:10px;
-      border:3px solid #444;
-      background:#000;
-    }
+.card-content {
+  flex: 1;
+}
 
-    .card h2{
-      margin:0 0 6px;
-      font-size:18px;
-    }
+.card-content h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+}
 
-    .card p{
-      margin:0;
-      font-size:14px;
-      color:#bbb;
-      line-height:1.4;
-    }
+.card-content p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.4;
+}
 
-    footer{
-      text-align:center;
-      padding:15px;
-      font-size:12px;
-      color:#777;
-      border-top:1px solid #333;
-    }
-  </style>
+.card-img {
+  width: 70px;
+  height: 70px;
+  background: #000;
+  border-radius: 8px;
+  border: 2px solid #555;
+  object-fit: cover;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 10px;
+  font-size: 13px;
+  color: #777;
+  border-top: 1px solid #222;
+}
+</style>
 </head>
 
 <body>
@@ -95,11 +95,11 @@
 <div class="container">
 
   <div class="card">
-    <img src="absolute-black.jpg" alt="Absolute Black Granite">
-    <div>
+    <div class="card-content">
       <h2>Absolute Black</h2>
       <p>Deep black premium granite. Popular for flooring & countertops.</p>
     </div>
+    <img src="absolute-black.jpg" alt="Absolute Black Granite" class="card-img">
   </div>
 
 </div>
@@ -110,5 +110,3 @@
 
 </body>
 </html>
-
-
