@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,41 +13,61 @@
       background:#0d0d0d;
       color:#ffffff;
     }
+
     header{
       background:#111;
       padding:20px;
       text-align:center;
       border-bottom:1px solid #333;
     }
-    header h1{i
+
+    header h1{
       margin:0;
       font-size:26px;
       letter-spacing:1px;
     }
+
     header p{
       margin:6px 0 0;
       font-size:14px;
       color:#aaa;
     }
+
     .container{
       padding:20px;
     }
+
     .card{
+      display:flex;
+      gap:15px;
       background:#1b1b1b;
       border:1px solid #2a2a2a;
       border-radius:12px;
-      padding:18px;
+      padding:15px;
       margin-bottom:15px;
+      align-items:center;
     }
+
+    .card img{
+      width:90px;
+      height:90px;
+      object-fit:cover;
+      border-radius:8px;
+      border:2px solid #444;
+      background:#000;
+    }
+
     .card h2{
-      margin-top:0;
-      font-size:20px;
+      margin:0 0 6px;
+      font-size:18px;
     }
-    .lock{
-      color:#ffcc00;
-      font-weight:bold;
-      margin:8px 0;
+
+    .card p{
+      margin:0;
+      font-size:14px;
+      color:#bbb;
     }
+
     footer{
       text-align:center;
       padding:15px;
@@ -64,12 +85,25 @@
   <p>Premium Granite Catalogue</p>
 </header>
 
+<div class="container">
 
+  <!-- Absolute Black Granite -->
+  <div class="card">
+    <img src="absolute-black.jpg" alt="Absolute Black Granite">
+    <div>
+      <h2>Absolute Black</h2>
+      <p>Deep black premium granite. Popular for flooring & countertops.</p>
+    </div>
+  </div>
+
+</div>
 
 <footer>
   © StoneVault | Luxuriano Stones
 </footer>
-<div style="text-align:center; margin:30px 0;">
+
+</body>
+</html>
 
 
 
