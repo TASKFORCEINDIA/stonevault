@@ -3,134 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StoneVault | Premium Catalogue</title>
+<title>Universal Catalogue</title>
 
 <style>
 :root {
-  --bg: #0b0b0b;
-  --card: #151515;
-  --border: #222;
-  --text-main: #ffffff;
-  --text-sub: #bdbdbd;
-  --accent: #666;
+  --bg:#0b0b0b;
+  --card:#151515;
+  --border:#222;
+  --text-main:#fff;
+  --text-sub:#bdbdbd;
+  --accent:#666;
+  --cta:#1a73e8;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing:border-box; }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text-main);
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text-main);
 }
 
 /* HEADER */
 header {
-  padding: 22px 14px;
-  border-bottom: 1px solid var(--border);
+  padding:22px 16px;
+  border-bottom:1px solid var(--border);
 }
-
-header h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-header p {
-  margin-top: 6px;
-  font-size: 13px;
-  color: var(--text-sub);
-}
+header h1 { margin:0; font-size:24px; }
+header p { margin-top:6px; font-size:13px; color:var(--text-sub); }
 
 /* SEARCH */
-.search-box {
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--border);
+.search {
+  padding:14px 16px;
+  border-bottom:1px solid var(--border);
+}
+.search input {
+  width:100%;
+  padding:13px 14px;
+  background:#111;
+  border:1px solid var(--border);
+  border-radius:14px;
+  color:#fff;
+  font-size:15px;
+  outline:none;
 }
 
-.search-box input {
-  width: 100%;
-  padding: 12px 14px;
-  background: #111;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  color: white;
-  font-size: 15px;
-  outline: none;
-}
-
-/* CONTAINER */
+/* LIST */
 .container {
-  max-width: 760px;
-  margin: 18px auto;
-  padding: 0 14px;
+  max-width:780px;
+  margin:18px auto;
+  padding:0 16px;
 }
 
 /* CARD */
 .card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 18px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:16px;
+  margin-bottom:18px;
+}
+
+/* TOP ROW */
+.card-top {
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
 /* TEXT */
-.card-content { flex: 1; }
-
-.card-content h2 {
-  margin: 0;
-  font-size: 17px;
-}
-
+.card-content { flex:1; }
+.card-content h2 { margin:0; font-size:17px; }
 .card-content p {
-  margin-top: 6px;
-  font-size: 13.5px;
-  line-height: 1.45;
-  color: var(--text-sub);
+  margin-top:6px;
+  font-size:13.5px;
+  line-height:1.45;
+  color:var(--text-sub);
 }
 
-/* THUMB IMAGE */
+/* IMAGE */
 .card-img {
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  border: 2px solid var(--accent);
-  object-fit: cover;
+  width:44px;
+  height:44px;
+  border-radius:8px;
+  border:2px solid var(--accent);
+  object-fit:cover;
+}
+
+/* CTA */
+.card-actions {
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+}
+
+.card-actions a {
+  flex:1;
+  text-align:center;
+  padding:10px 0;
+  border-radius:12px;
+  font-size:14px;
+  text-decoration:none;
+  color:#fff;
+  border:1px solid var(--border);
+}
+
+.card-actions a.primary {
+  background:var(--cta);
+  border:none;
 }
 
 /* POPUP */
 #popup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
 }
 
 #popupImg {
-  max-width: 92%;
-  max-height: 92%;
-  border-radius: 14px;
-  border: 3px solid #777;
-  transition: transform 0.35s ease;
+  max-width:92%;
+  max-height:92%;
+  border-radius:16px;
+  border:3px solid #777;
+  transition:transform .35s ease;
 }
 
-#popupImg.zoomed {
-  transform: scale(1.45);
-}
+#popupImg.zoomed { transform:scale(1.45); }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 13px;
-  color: #777;
-  border-top: 1px solid var(--border);
+  text-align:center;
+  padding:20px 12px;
+  font-size:13px;
+  color:#777;
+  border-top:1px solid var(--border);
 }
 </style>
 </head>
@@ -138,37 +149,39 @@ footer {
 <body>
 
 <header>
-  <h1>StoneVault</h1>
-  <p>Premium Granite Catalogue</p>
+  <h1>APP NAME</h1>
+  <p>Premium catalogue experience</p>
 </header>
 
-<div class="search-box">
-  <input type="text" id="search" placeholder="Search granite, colour, finish...">
+<div class="search">
+  <input type="text" id="search" placeholder="Search anything you want…">
 </div>
 
-<div class="container" id="list">
+<div class="container">
 
-  <!-- CARD -->
-  <div class="card">
-    <div class="card-content">
-      <h2>Absolute Black</h2>
-      <p>Deep black premium granite for flooring and countertops.</p>
+  <!-- UNIVERSAL ITEM -->
+  <div class="card" data-keywords="black granite kitchen flooring luxury stone">
+    <div class="card-top">
+      <div class="card-content">
+        <h2>Absolute Black</h2>
+        <p>Premium black stone used for flooring and kitchen applications.</p>
+      </div>
+      <img src="absolute-black.jpg"
+           class="card-img"
+           onclick="openPopup('absolute-black.jpg')">
     </div>
-    <img src="absolute-black.jpg" class="card-img" onclick="openPopup('absolute-black.jpg')">
-  </div>
 
-  <div class="card">
-    <div class="card-content">
-      <h2>Black Galaxy</h2>
-      <p>Black granite with golden speckles, luxury finish.</p>
+    <div class="card-actions">
+      <a href="tel:+919999999999">Call</a>
+      <a href="https://wa.me/919999999999"
+         class="primary">WhatsApp</a>
     </div>
-    <img src="black-galaxy.jpg" class="card-img" onclick="openPopup('black-galaxy.jpg')">
   </div>
 
 </div>
 
 <footer>
-  © StoneVault | Luxuriano Stones
+  © Universal Base System
 </footer>
 
 <!-- POPUP -->
@@ -177,30 +190,29 @@ footer {
 </div>
 
 <script>
-/* IMAGE POPUP */
-function openPopup(src) {
-  const popup = document.getElementById("popup");
-  const img = document.getElementById("popupImg");
-  img.src = src;
-  img.classList.remove("zoomed");
-  popup.style.display = "flex";
+function openPopup(src){
+  const p=document.getElementById("popup");
+  const i=document.getElementById("popupImg");
+  i.src=src;
+  i.classList.remove("zoomed");
+  p.style.display="flex";
 }
 
-document.getElementById("popupImg").addEventListener("click", function(e) {
+document.getElementById("popupImg").addEventListener("click",function(e){
   e.stopPropagation();
   this.classList.toggle("zoomed");
 });
 
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
+function closePopup(){
+  document.getElementById("popup").style.display="none";
 }
 
-/* SEARCH */
-document.getElementById("search").addEventListener("keyup", function() {
-  const value = this.value.toLowerCase();
-  document.querySelectorAll(".card").forEach(card => {
-    card.style.display = card.innerText.toLowerCase().includes(value)
-      ? "flex" : "none";
+/* SMART SEARCH */
+document.getElementById("search").addEventListener("keyup",function(){
+  const v=this.value.toLowerCase();
+  document.querySelectorAll(".card").forEach(c=>{
+    const t=(c.innerText+" "+c.dataset.keywords).toLowerCase();
+    c.style.display=t.includes(v)?"block":"none";
   });
 });
 </script>
